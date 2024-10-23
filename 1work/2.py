@@ -2,10 +2,15 @@ import random
 
 def get_numbers_ticket(min, max, quantity):
 
-    lottery_nums_list = random.sample(range(min, max + 1), quantity)
+    try:
 
-    result = sorted(lottery_nums_list)
+        lottery_nums_list = random.sample(range(min, max + 1), quantity)
 
-    return result
+        result = sorted(lottery_nums_list)
 
-print("Ваші лотерейні числа:", get_numbers_ticket(1, 49, 6))
+        return result
+    
+    except ValueError:
+        return []
+
+print("Ваші лотерейні числа:", get_numbers_ticket(112, 10, 5))
